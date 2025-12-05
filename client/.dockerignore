@@ -1,0 +1,567 @@
+# ============================================================================
+# COMPREHENSIVE .DOCKERIGNORE
+# Universal dockerignore for any Node.js, Python, or general development project
+# Prevents unnecessary files from being sent to Docker build context
+# Can be used at root, frontend, or backend level
+# ============================================================================
+
+# ============================================================================
+# VERSION CONTROL
+# ============================================================================
+
+.git
+.gitignore
+.gitattributes
+.gitmodules
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+.git/
+**/.git
+**/.gitignore
+
+# SVN
+.svn/
+
+# Mercurial
+.hg/
+.hgignore
+.hgtags
+
+# ============================================================================
+# DEPENDENCIES & PACKAGES
+# ============================================================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnp/
+.pnp.js
+jspm_packages/
+bower_components/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.hypothesis/
+.pyenv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*/
+
+# Ruby
+vendor/bundle/
+.bundle/
+
+# Go
+vendor/
+
+# ============================================================================
+# BUILD OUTPUT & ARTIFACTS (Keep only what's needed for runtime)
+# ============================================================================
+
+# Build directories (if you need these in container, comment them out)
+dist/
+build/
+out/
+target/
+
+# Next.js
+.next/
+out/
+
+# Nuxt.js
+.nuxt/
+.output/
+
+# Gatsby
+.cache/
+public/
+
+# Vue.js
+.vuepress/dist/
+
+# ============================================================================
+# ENVIRONMENT & CONFIGURATION
+# ============================================================================
+
+# Environment files (NEVER include real secrets in images)
+.env
+.env.*
+.env.local
+.env.*.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+.env.backup
+*.env
+
+# Keep example files for documentation
+!.env.example
+!.env.sample
+!.env.template
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# ============================================================================
+# DOCKER FILES
+# ============================================================================
+
+# Docker files (we're already building with them)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+.docker/
+
+# Docker artifacts
+docker-compose.override.yml
+
+# ============================================================================
+# DOCUMENTATION
+# ============================================================================
+
+# Documentation files
+README.md
+README
+readme.md
+CHANGELOG.md
+changelog.md
+CONTRIBUTING.md
+LICENSE
+LICENSE.md
+NOTICE
+AUTHORS
+CONTRIBUTORS
+
+# Documentation directories
+docs/
+doc/
+documentation/
+wiki/
+.github/
+.gitlab/
+
+# ============================================================================
+# CI/CD
+# ============================================================================
+
+# CI/CD Configuration
+.gitlab-ci.yml
+.travis.yml
+azure-pipelines.yml
+.circleci/
+.github/workflows/
+.github/actions/
+jenkins/
+Jenkinsfile
+buildspec.yml
+
+# Deployment
+.gcloudignore
+.slugignore
+.cfignore
+app.yaml
+now.json
+vercel.json
+netlify.toml
+.vercel/
+.netlify/
+
+# ============================================================================
+# TESTING
+# ============================================================================
+
+# Test files
+**/*.test.js
+**/*.test.ts
+**/*.test.jsx
+**/*.test.tsx
+**/*.spec.js
+**/*.spec.ts
+**/*.spec.jsx
+**/*.spec.tsx
+__tests__/
+tests/
+test/
+spec/
+e2e/
+cypress/
+playwright/
+
+# Coverage reports
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+junit.xml
+test-results/
+
+# Testing tools
+.jest/
+jest.config.*
+cypress.config.*
+playwright.config.*
+vitest.config.*
+karma.conf.*
+
+# ============================================================================
+# LOGS
+# ============================================================================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+debug.log
+error.log
+combined.log
+
+# ============================================================================
+# OPERATING SYSTEMS
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# IDEs & EDITORS
+# ============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+*~
+tags
+
+# Emacs
+*~
+\#*\#
+.emacs.desktop
+.emacs.desktop.lock
+*.elc
+.\#*
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# Xcode
+xcuserdata/
+*.xcworkspace
+*.xcodeproj
+
+# Android Studio
+local.properties
+.gradle/
+captures/
+
+# ============================================================================
+# DATABASES (Usually managed separately, not in containers)
+# ============================================================================
+
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+postgres-data/
+mongo-data/
+mysql-data/
+redis-data/
+dump.rdb
+
+# ============================================================================
+# TEMPORARY & CACHE FILES
+# ============================================================================
+
+temp/
+tmp/
+*.tmp
+*.temp
+.temp/
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.prettiercache
+.sass-cache/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# BUILD TOOLS & CONFIGURATIONS (Keep only if needed at runtime)
+# ============================================================================
+
+# Webpack
+webpack.config.*
+.webpack/
+
+# Babel
+.babelrc*
+babel.config.*
+
+# ESLint
+.eslintrc*
+.eslintignore
+
+# Prettier
+.prettierrc*
+.prettierignore
+
+# Stylelint
+.stylelintrc*
+.stylelintignore
+
+# TypeScript
+tsconfig*.json
+*.tsbuildinfo
+
+# PostCSS
+postcss.config.*
+
+# Tailwind
+tailwind.config.*
+
+# Vite
+vite.config.*
+
+# Rollup
+rollup.config.*
+
+# ============================================================================
+# PACKAGE MANAGER FILES (Keep only what's needed)
+# ============================================================================
+
+# Keep package.json and lock files, but ignore cache
+.npmrc
+.yarnrc
+.yarnrc.yml
+.pnpmfile.cjs
+.nvmrc
+
+# ============================================================================
+# RUNTIME FILES
+# ============================================================================
+
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================================================================
+# SCRIPTS (If not needed at runtime)
+# ============================================================================
+
+# Development scripts
+scripts/dev/
+scripts/test/
+scripts/setup/
+
+# Build scripts (if not needed after build)
+# scripts/build/
+
+# ============================================================================
+# ASSETS & MEDIA (Uncomment if you have large files)
+# ============================================================================
+
+# Uncomment if you don't want to include in Docker image
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.mp4
+# *.avi
+# *.mov
+# *.mp3
+# *.wav
+# *.pdf
+# uploads/
+# media/
+
+# ============================================================================
+# MONOREPO SPECIFIC
+# ============================================================================
+
+# Lerna
+lerna.json
+lerna-debug.log*
+
+# Nx
+nx.json
+.nx/
+
+# Turborepo
+turbo.json
+
+# Rush
+rush.json
+
+# ============================================================================
+# CLOUD & INFRASTRUCTURE
+# ============================================================================
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraformrc
+terraform.rc
+
+# Kubernetes
+*.kubeconfig
+
+# AWS
+.aws/
+.elasticbeanstalk/
+
+# Google Cloud
+.gcloud/
+
+# Azure
+.azure/
+
+# Serverless
+.serverless/
+
+# ============================================================================
+# SECURITY SCANNING
+# ============================================================================
+
+# Snyk
+.snyk
+
+# SonarQube
+.sonarqube/
+.scannerwork/
+
+# ============================================================================
+# STORYBOOK
+# ============================================================================
+
+storybook-static/
+.storybook/
+
+# ============================================================================
+# MISCELLANEOUS
+# ============================================================================
+
+# Editor directories and files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.parcel-cache
+
+# Next.js telemetry
+.next/cache/
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+
+# Add your project-specific ignores here
+# backup/
+# generated/
+# migrations/  (uncomment if migrations should be external)
+
+# ============================================================================
+# IMPORTANT NOTES
+# ============================================================================
+
+# 1. Keep files needed at runtime (e.g., package.json, source code)
+# 2. Exclude files only needed for development
+# 3. Never include secrets or credentials
+# 4. Consider your final image size - exclude unnecessary files
+# 5. Use multi-stage builds to further optimize (keep build deps out of final image)

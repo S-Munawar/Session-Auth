@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",                          // Modern JavaScript features
+    "lib": ["ES2022"],                           // Standard library for ES2022
+    "module": "ESNext",                          // Modern module system
+    "moduleResolution": "node",                  // Node.js module resolution
+    
+    /* Emit */
+    "outDir": "./dist",                          // Output directory
+    "rootDir": "./src",                          // Source directory
+    "baseUrl": "./",                             // Base URL for module resolution
+    "paths":{                                    // Path aliases
+      "@/*": ["src/*"]
+    },
+    "declaration": true,                         // Generate .d.ts files
+    "declarationMap": true,                      // Source maps for declarations
+    "sourceMap": true,                           // Source maps for debugging
+    "removeComments": true,                      // Remove comments in output
+    
+    /* Interop Constraints */
+    "esModuleInterop": true,                     // Enable ESM/CommonJS interop
+    "allowSyntheticDefaultImports": true,        // Allow default imports from modules
+    "forceConsistentCasingInFileNames": true,    // Enforce consistent file naming
+    "resolveJsonModule": true,                   // Allow importing JSON files
+    
+    /* Type Checking - STRICT MODE ENABLED */
+    "strict": true,                              // Enable all strict checks
+    "noImplicitAny": true,                       // Error on implicit 'any'
+    "strictNullChecks": true,                    // Strict null checking
+    "strictFunctionTypes": true,                 // Strict function types
+    "strictBindCallApply": true,                 // Strict bind/call/apply
+    "strictPropertyInitialization": true,        // Strict property init
+    "noImplicitThis": true,                      // Error on implicit 'this'
+    "alwaysStrict": true,                        // Parse in strict mode
+    
+    /* Additional Checks */
+    "noUnusedLocals": true,                      // Report unused locals
+    "noUnusedParameters": true,                  // Report unused parameters
+    "noImplicitReturns": true,                   // Report missing returns
+    "noFallthroughCasesInSwitch": true,         // Report fallthrough cases
+    "noUncheckedIndexedAccess": true,           // Add undefined to index signatures
+    
+    /* Advanced */
+    "skipLibCheck": true,                        // Skip lib checking for faster builds
+    "isolatedModules": true                      // Ensure each file can be transpiled
+  },
+  "include": ["src/**/*"],                       // Include all files in src
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
+}

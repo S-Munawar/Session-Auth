@@ -1,0 +1,68 @@
+{
+  "name": "expressjs-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The backend of the Next.js-Express-Auth0 integration template. It's built using Express.js and provides API endpoints, authentication routes, and middleware configurations.",
+  "homepage": "https://benjamin-chavez.com/blog/integrating-next.js-with-express.js-using-auth0-for-authentication",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.js --packages=external"
+  },
+  "keywords": [
+    "example",
+    "express",
+    "auth0",
+    "template",
+    "backend",
+    "api",
+    "typescript",
+    "node"
+  ],
+  "author": {
+    "name": "Ben Chavez",
+    "email": "ben.m.chavez@gmail.com",
+    "url": "https://benjamin-chavez.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benjamin-chavez/nextjs-express-auth0-template"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.15.0",
+    "pnpm": ">=8.8.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
+    "debug": "~4.3.4",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-flash": "^0.0.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.3",
+    "jwks-rsa": "^3.1.0",
+    "morgan": "~1.10.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.17",
+    "@types/express-flash": "^0.0.2",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/morgan": "^1.9.5",
+    "@types/node": "^20.5.9",
+    "esbuild": "^0.27.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@10.20.0"
+}

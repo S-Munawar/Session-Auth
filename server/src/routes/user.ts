@@ -1,10 +1,9 @@
-import {Router} from 'express'; // Router from express is a class that helps to create route handlers modularly.
-import { getUserProfile } from '../controllers/user';
-import authMiddleware from '../middleware/auth';
-
+import {Router} from 'express';
+import {GetCurrentUser} from '../controllers/auth';
+import {requireAuth} from '../middleware/auth';
 
 const router: Router = Router();
 
-router.get('/getProfile', authMiddleware, getUserProfile);
+router.get('/getProfile', requireAuth, GetCurrentUser);
 
 export default router;
